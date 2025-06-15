@@ -7,16 +7,16 @@ import ProtectedRoute from "@/components/ProtectedRoute";
 
 const Index = () => {
   return (
-    <ProtectedRoute>
-      <div className="min-h-screen bg-white">
-        <Header />
-        <main>
-          <HeroSection />
+    <div className="min-h-screen bg-white">
+      <Header />
+      <main>
+        <HeroSection />
+        <ProtectedRoute>
           <ImageUpload />
-        </main>
-        <Footer />
-      </div>
-    </ProtectedRoute>
+        </ProtectedRoute>
+      </main>
+      <Footer />
+    </div>
   );
 };
 
