@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -6,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useAuth } from '@/contexts/AuthContext';
 import { useToast } from '@/hooks/use-toast';
+import Header from '@/components/Header';
 
 const Auth = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -60,84 +60,87 @@ const Auth = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-      <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="flex justify-center">
-          <div className="w-12 h-12 bg-black rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-lg">IC</span>
+    <div className="min-h-screen bg-gray-50">
+      <Header />
+      <div className="flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+        <div className="sm:mx-auto sm:w-full sm:max-w-md">
+          <div className="flex justify-center">
+            <div className="w-12 h-12 bg-black rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-lg">IC</span>
+            </div>
           </div>
+          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+            {isLogin ? 'Sign in to your account' : 'Create your account'}
+          </h2>
+          <p className="mt-2 text-center text-sm text-gray-600">
+            {isLogin ? "Don't have an account? " : "Already have an account? "}
+            <button
+              type="button"
+              onClick={() => setIsLogin(!isLogin)}
+              className="font-medium text-black hover:text-gray-800"
+            >
+              {isLogin ? 'Sign up' : 'Sign in'}
+            </button>
+          </p>
         </div>
-        <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          {isLogin ? 'Sign in to your account' : 'Create your account'}
-        </h2>
-        <p className="mt-2 text-center text-sm text-gray-600">
-          {isLogin ? "Don't have an account? " : "Already have an account? "}
-          <button
-            type="button"
-            onClick={() => setIsLogin(!isLogin)}
-            className="font-medium text-black hover:text-gray-800"
-          >
-            {isLogin ? 'Sign up' : 'Sign in'}
-          </button>
-        </p>
-      </div>
 
-      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-          <form className="space-y-6" onSubmit={handleSubmit}>
-            {!isLogin && (
+        <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+          <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+            <form className="space-y-6" onSubmit={handleSubmit}>
+              {!isLogin && (
+                <div>
+                  <Label htmlFor="fullName">Full Name</Label>
+                  <Input
+                    id="fullName"
+                    name="fullName"
+                    type="text"
+                    required={!isLogin}
+                    value={fullName}
+                    onChange={(e) => setFullName(e.target.value)}
+                    className="mt-1"
+                  />
+                </div>
+              )}
+
               <div>
-                <Label htmlFor="fullName">Full Name</Label>
+                <Label htmlFor="email">Email address</Label>
                 <Input
-                  id="fullName"
-                  name="fullName"
-                  type="text"
-                  required={!isLogin}
-                  value={fullName}
-                  onChange={(e) => setFullName(e.target.value)}
+                  id="email"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="mt-1"
                 />
               </div>
-            )}
 
-            <div>
-              <Label htmlFor="email">Email address</Label>
-              <Input
-                id="email"
-                name="email"
-                type="email"
-                autoComplete="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="mt-1"
-              />
-            </div>
+              <div>
+                <Label htmlFor="password">Password</Label>
+                <Input
+                  id="password"
+                  name="password"
+                  type="password"
+                  autoComplete={isLogin ? "current-password" : "new-password"}
+                  required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="mt-1"
+                />
+              </div>
 
-            <div>
-              <Label htmlFor="password">Password</Label>
-              <Input
-                id="password"
-                name="password"
-                type="password"
-                autoComplete={isLogin ? "current-password" : "new-password"}
-                required
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="mt-1"
-              />
-            </div>
-
-            <div>
-              <Button
-                type="submit"
-                className="w-full bg-black hover:bg-gray-800"
-                disabled={isLoading}
-              >
-                {isLoading ? 'Loading...' : (isLogin ? 'Sign in' : 'Sign up')}
-              </Button>
-            </div>
-          </form>
+              <div>
+                <Button
+                  type="submit"
+                  className="w-full bg-black hover:bg-gray-800"
+                  disabled={isLoading}
+                >
+                  {isLoading ? 'Loading...' : (isLogin ? 'Sign in' : 'Sign up')}
+                </Button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
