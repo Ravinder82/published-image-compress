@@ -1,4 +1,3 @@
-
 import { useState, useCallback } from 'react';
 import { Button } from "@/components/ui/button";
 import { Settings } from "lucide-react";
@@ -251,7 +250,7 @@ const ImageUpload = () => {
 
   return (
     <section id="upload-section" className="py-20 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             Upload Your Images
@@ -261,57 +260,31 @@ const ImageUpload = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
-          {/* Main Upload Area */}
-          <div className="lg:col-span-2 space-y-6">
-            {/* Upload Area */}
-            <ImageUploadArea
-              dragActive={dragActive}
-              onDrag={handleDrag}
-              onDrop={handleDrop}
-              onFileInput={handleFileInput}
-            />
+        <div className="space-y-8">
+          {/* Upload Area */}
+          <ImageUploadArea
+            dragActive={dragActive}
+            onDrag={handleDrag}
+            onDrop={handleDrop}
+            onFileInput={handleFileInput}
+          />
 
-            {/* Stats Summary */}
-            <CompressionStats
-              images={images}
-              onDownloadAll={downloadAll}
-              onRecompressAll={recompressAll}
-            />
-
-            {/* Uploaded Images */}
-            {images.length > 0 && (
-              <div className="space-y-6">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-2xl font-semibold text-gray-900">Processing Images</h3>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() => setShowControls(!showControls)}
-                  >
-                    <Settings className="w-4 h-4 mr-2" />
-                    {showControls ? 'Hide' : 'Show'} Controls
-                  </Button>
-                </div>
-                
-                <div className="grid gap-6">
-                  {images.map((image) => (
-                    <ImageProcessingCard
-                      key={image.id}
-                      image={image}
-                      onRemove={removeImage}
-                      onDownload={downloadCompressed}
-                    />
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Compression Controls Sidebar */}
-          <div className="lg:col-span-1">
-            {(showControls || images.length === 0) && (
-              <div className="sticky top-24">
+          {/* Compression Controls - Always show below upload area */}
+          <div className="w-full">
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="text-2xl font-semibold text-gray-900">Compression Settings</h3>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setShowControls(!showControls)}
+              >
+                <Settings className="w-4 h-4 mr-2" />
+                {showControls ? 'Hide' : 'Show'} Advanced Settings
+              </Button>
+            </div>
+            
+            {showControls && (
+              <div className="w-full max-w-2xl mx-auto">
                 <CompressionControls
                   options={compressionOptions}
                   onOptionsChange={setCompressionOptions}
@@ -321,6 +294,31 @@ const ImageUpload = () => {
               </div>
             )}
           </div>
+
+          {/* Stats Summary */}
+          <CompressionStats
+            images={images}
+            onDownloadAll={downloadAll}
+            onRecompressAll={recompressAll}
+          />
+
+          {/* Uploaded Images */}
+          {images.length > 0 && (
+            <div className="space-y-6">
+              <h3 className="text-2xl font-semibold text-gray-900">Processing Images</h3>
+              
+              <div className="grid gap-6">
+                {images.map((image) => (
+                  <ImageProcessingCard
+                    key={image.id}
+                    image={image}
+                    onRemove={removeImage}
+                    onDownload={downloadCompressed}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>
