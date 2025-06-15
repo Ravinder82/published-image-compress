@@ -1,5 +1,6 @@
 
 import { Heart } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -22,20 +23,20 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold mb-4">Product</h3>
             <ul className="space-y-2 text-gray-400">
-              <li><a href="#" className="hover:text-white transition-colors">Features</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">API</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Pricing</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Enterprise</a></li>
+              <li><Link to="/features" className="hover:text-white transition-colors">Features</Link></li>
+              <li><Link to="/api" className="hover:text-white transition-colors">API</Link></li>
+              <li><Link to="/pricing" className="hover:text-white transition-colors">Pricing</Link></li>
+              <li><Link to="/enterprise" className="hover:text-white transition-colors">Enterprise</Link></li>
             </ul>
           </div>
           
           <div>
             <h3 className="font-semibold mb-4">Support</h3>
             <ul className="space-y-2 text-gray-400">
-              <li><a href="#" className="hover:text-white transition-colors">Help Center</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Contact Us</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
+              <li><Link to="/help" className="hover:text-white transition-colors">Help Center</Link></li>
+              <li><Link to="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
+              <li><Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link></li>
             </ul>
           </div>
         </div>
