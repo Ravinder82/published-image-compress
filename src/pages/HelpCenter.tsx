@@ -124,12 +124,15 @@ const HelpCenter = () => {
   );
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
       <Header />
-      <main className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <main className="relative py-20 overflow-hidden">
+        {/* Background pattern */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%239C92AC%22 fill-opacity=%220.03%22%3E%3Ccircle cx=%2230%22 cy=%2230%22 r=%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-6">
               Help Center
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
@@ -143,21 +146,21 @@ const HelpCenter = () => {
                 placeholder="Search for help articles..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none text-lg"
+                className="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none text-lg bg-white/80 backdrop-blur-sm"
               />
             </div>
           </div>
           
           {/* Quick Start Guide */}
           <div className="mb-16">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-8 text-center">Quick Start Guide</h2>
+            <h2 className="text-2xl font-semibold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-8 text-center">Quick Start Guide</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {quickStartSteps.map((step, index) => (
-                <div key={index} className="text-center">
-                  <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                <div key={index} className="text-center bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold shadow-lg">
                     {step.step}
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{step.title}</h3>
+                  <h3 className="text-lg font-semibold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">{step.title}</h3>
                   <p className="text-gray-600">{step.description}</p>
                 </div>
               ))}
@@ -167,27 +170,27 @@ const HelpCenter = () => {
           {/* Categories */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {categories.map((category, index) => (
-              <div key={index} className="p-6 bg-white rounded-2xl shadow-sm border hover:shadow-md transition-shadow cursor-pointer">
-                <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-4">
-                  <category.icon className="w-6 h-6 text-gray-700" />
+              <div key={index} className="p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer group">
+                <div className="w-12 h-12 bg-gradient-to-r from-green-400 to-blue-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <category.icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{category.title}</h3>
+                <h3 className="text-xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">{category.title}</h3>
                 <p className="text-gray-600 mb-4">{category.description}</p>
-                <p className="text-sm text-gray-500">{category.articles} articles</p>
+                <p className="text-sm text-purple-500 font-medium">{category.articles} articles</p>
               </div>
             ))}
           </div>
           
           {/* Popular Articles */}
-          <div className="bg-gray-50 rounded-2xl p-8 mb-16">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-6">
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 mb-16 shadow-lg border border-white/20">
+            <h2 className="text-2xl font-semibold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent mb-6">
               {searchQuery ? `Search Results (${filteredArticles.length})` : 'Popular Articles'}
             </h2>
             <div className="space-y-4">
               {filteredArticles.map((article, index) => (
-                <div key={index} className="flex items-center space-x-3 p-4 bg-white rounded-lg hover:shadow-sm transition-shadow cursor-pointer">
-                  <FileText className="w-5 h-5 text-gray-400" />
-                  <span className="text-gray-900">{article}</span>
+                <div key={index} className="flex items-center space-x-3 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg hover:from-blue-100 hover:to-purple-100 transition-all duration-300 cursor-pointer border border-white/30 hover:shadow-md">
+                  <FileText className="w-5 h-5 text-purple-500" />
+                  <span className="text-gray-700 font-medium">{article}</span>
                 </div>
               ))}
               {searchQuery && filteredArticles.length === 0 && (
@@ -198,15 +201,15 @@ const HelpCenter = () => {
 
           {/* FAQ Section */}
           <div className="mb-16">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-8 text-center">Frequently Asked Questions</h2>
+            <h2 className="text-2xl font-semibold bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent mb-8 text-center">Frequently Asked Questions</h2>
             <div className="max-w-4xl mx-auto">
               <Accordion type="single" collapsible className="space-y-4">
                 {faqItems.map((faq, index) => (
-                  <AccordionItem key={index} value={`item-${index}`} className="bg-white rounded-lg border px-6">
-                    <AccordionTrigger className="text-left font-medium">
+                  <AccordionItem key={index} value={`item-${index}`} className="bg-white/80 backdrop-blur-sm rounded-lg border border-white/20 px-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <AccordionTrigger className="text-left font-medium bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:from-purple-600 hover:to-pink-600">
                       {faq.question}
                     </AccordionTrigger>
-                    <AccordionContent className="text-gray-600 pb-4">
+                    <AccordionContent className="text-gray-600 pb-4 leading-relaxed">
                       {faq.answer}
                     </AccordionContent>
                   </AccordionItem>
@@ -216,21 +219,21 @@ const HelpCenter = () => {
           </div>
 
           {/* Contact Support */}
-          <div className="bg-black text-white rounded-2xl p-8 text-center">
+          <div className="bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 text-white rounded-2xl p-8 text-center shadow-xl border border-white/20">
             <h2 className="text-2xl font-semibold mb-4">Still Need Help?</h2>
-            <p className="text-gray-300 mb-6">
+            <p className="text-blue-100 mb-6">
               Can't find what you're looking for? Our support team is here to help.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
                 href="mailto:1294poonia@gmail.com"
-                className="bg-white text-black px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors font-medium"
+                className="bg-white text-purple-600 px-6 py-3 rounded-lg hover:bg-blue-50 transition-colors font-medium shadow-lg hover:shadow-xl hover:scale-105 transform duration-300"
               >
                 Email Support
               </a>
               <a 
                 href="/contact"
-                className="border border-white text-white px-6 py-3 rounded-lg hover:bg-white hover:text-black transition-colors font-medium"
+                className="border-2 border-white text-white px-6 py-3 rounded-lg hover:bg-white hover:text-purple-600 transition-colors font-medium shadow-lg hover:shadow-xl hover:scale-105 transform duration-300"
               >
                 Contact Form
               </a>
