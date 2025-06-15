@@ -78,7 +78,7 @@ const Pricing = () => {
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 bg-clip-text text-transparent mb-6">
+            <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-6">
               Simple, Transparent Pricing
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -92,8 +92,8 @@ const Pricing = () => {
                 key={index} 
                 className={`relative p-8 rounded-2xl border-2 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${
                   plan.popular 
-                    ? 'border-blue-500 bg-gradient-to-br from-blue-600 to-purple-600 text-white' 
-                    : 'border-white/20 bg-white/80 hover:border-gray-300'
+                    ? 'border-purple-500 bg-gradient-to-br from-blue-600 to-purple-600 text-white' 
+                    : 'border-white/20 bg-white/80 hover:border-purple-300'
                 }`}
               >
                 {plan.popular && (
@@ -105,11 +105,11 @@ const Pricing = () => {
                 )}
                 
                 <div className="text-center mb-8">
-                  <h3 className={`text-2xl font-semibold mb-2 ${plan.popular ? 'text-white' : 'text-gray-900'}`}>
+                  <h3 className={`text-2xl font-semibold mb-2 ${plan.popular ? 'text-white' : 'bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'}`}>
                     {plan.name}
                   </h3>
                   <div className="flex items-baseline justify-center">
-                    <span className={`text-4xl font-bold ${plan.popular ? 'text-white' : 'text-gray-900'}`}>
+                    <span className={`text-4xl font-bold ${plan.popular ? 'text-white' : 'bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'}`}>
                       {plan.price}
                     </span>
                     <span className={`ml-1 ${plan.popular ? 'text-gray-200' : 'text-gray-600'}`}>
@@ -132,7 +132,7 @@ const Pricing = () => {
                 <Button 
                   className={`w-full py-3 px-6 rounded-lg font-medium transition-all duration-300 hover:scale-105 ${
                     plan.popular 
-                      ? 'bg-white text-gray-900 hover:bg-gray-100 shadow-lg' 
+                      ? 'bg-white text-purple-600 hover:bg-gray-100 shadow-lg' 
                       : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg'
                   }`}
                   onClick={() => plan.name === 'Enterprise' ? handleContactSales() : handleGetStarted(plan.name)}
