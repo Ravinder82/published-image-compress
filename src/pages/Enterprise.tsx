@@ -2,8 +2,23 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Building, Shield, Users, Headphones } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const Enterprise = () => {
+  const navigate = useNavigate();
+
+  const handleContactSales = () => {
+    navigate('/contact');
+  };
+
+  const handleScheduleDemo = () => {
+    // For now, navigate to contact page with a demo request context
+    // In a real app, this could open a calendar booking widget
+    console.log('User requested demo scheduling');
+    navigate('/contact');
+  };
+
   const benefits = [
     {
       icon: Building,
@@ -61,12 +76,19 @@ const Enterprise = () => {
               Contact our enterprise team to discuss your requirements and get a custom solution tailored to your organization.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-black text-white px-8 py-4 rounded-lg hover:bg-gray-800 transition-colors text-lg">
+              <Button 
+                className="bg-black text-white px-8 py-4 rounded-lg hover:bg-gray-800 transition-colors text-lg"
+                onClick={handleContactSales}
+              >
                 Contact Sales
-              </button>
-              <button className="border-2 border-black text-black px-8 py-4 rounded-lg hover:bg-black hover:text-white transition-colors text-lg">
+              </Button>
+              <Button 
+                variant="outline"
+                className="border-2 border-black text-black px-8 py-4 rounded-lg hover:bg-black hover:text-white transition-colors text-lg"
+                onClick={handleScheduleDemo}
+              >
                 Schedule Demo
-              </button>
+              </Button>
             </div>
           </div>
         </div>
