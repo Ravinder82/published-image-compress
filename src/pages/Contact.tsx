@@ -9,7 +9,7 @@ const Contact = () => {
       icon: Mail,
       title: "Email Support",
       description: "Get help via email",
-      contact: "support@imagecompress.com",
+      contact: "1294poonia@gmail.com",
       availability: "24/7 response"
     },
     {
