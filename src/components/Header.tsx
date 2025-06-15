@@ -17,6 +17,7 @@ const Header = () => {
   };
 
   const handleLogoClick = () => {
+    console.log('Logo clicked, navigating to homepage');
     navigate('/');
   };
 
