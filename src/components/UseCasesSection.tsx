@@ -1,6 +1,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Globe, Share2, Mail, HardDrive, ShoppingCart, Smartphone } from "lucide-react";
 
 const UseCasesSection = () => {
   const useCases = [
@@ -8,45 +9,61 @@ const UseCasesSection = () => {
       title: "Website Optimization",
       description: "Reduce page load times and improve SEO by compressing hero images, product photos, and gallery images.",
       benefits: ["Faster loading", "Better SEO", "Improved UX"],
-      reduction: "Up to 85% smaller"
+      reduction: "Up to 85% smaller",
+      icon: Globe,
+      gradient: "from-blue-500 to-cyan-500"
     },
     {
       title: "Social Media Content",
       description: "Optimize images for Instagram, Facebook, Twitter while maintaining visual quality for maximum engagement.",
       benefits: ["Quick uploads", "Better quality", "More engagement"],
-      reduction: "Perfect sizing"
+      reduction: "Perfect sizing",
+      icon: Share2,
+      gradient: "from-pink-500 to-rose-500"
     },
     {
       title: "Email Campaigns",
       description: "Reduce email size and improve deliverability by compressing newsletter images and promotional content.",
       benefits: ["Better delivery", "Faster opens", "Lower costs"],
-      reduction: "Smaller attachments"
+      reduction: "Smaller attachments",
+      icon: Mail,
+      gradient: "from-green-500 to-emerald-500"
     },
     {
       title: "Storage Management",
       description: "Free up valuable storage space on your device, cloud storage, or server without losing image quality.",
       benefits: ["Save space", "Reduce costs", "Organize better"],
-      reduction: "Up to 90% savings"
+      reduction: "Up to 90% savings",
+      icon: HardDrive,
+      gradient: "from-purple-500 to-violet-500"
     },
     {
       title: "E-commerce Products",
       description: "Optimize product images for faster catalog browsing while maintaining the detail customers need to make purchases.",
       benefits: ["Fast browsing", "Clear details", "Higher sales"],
-      reduction: "Optimal balance"
+      reduction: "Optimal balance",
+      icon: ShoppingCart,
+      gradient: "from-orange-500 to-amber-500"
     },
     {
       title: "Mobile Apps",
       description: "Reduce app size and improve performance by compressing images before including them in your mobile application.",
       benefits: ["Smaller apps", "Faster performance", "Better UX"],
-      reduction: "Significant reduction"
+      reduction: "Significant reduction",
+      icon: Smartphone,
+      gradient: "from-indigo-500 to-blue-500"
     }
   ];
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-20 overflow-hidden">
+      {/* Background with pattern */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50 to-white"></div>
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"%3E%3Cg fill-opacity="0.03"%3E%3Cpolygon fill="%23000" points="50 0 60 40 100 50 60 60 50 100 40 60 0 50 40 40"/%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+      
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent mb-4">
             Perfect for Every Use Case
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -57,16 +74,19 @@ const UseCasesSection = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {useCases.map((useCase, index) => (
-            <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
-              <CardHeader>
+            <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+              <CardHeader className="relative">
                 <div className="flex justify-between items-start mb-2">
-                  <CardTitle className="text-lg font-semibold text-gray-900">
-                    {useCase.title}
-                  </CardTitle>
-                  <Badge variant="secondary" className="text-xs">
+                  <div className={`w-12 h-12 bg-gradient-to-r ${useCase.gradient} rounded-xl flex items-center justify-center mb-3`}>
+                    <useCase.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <Badge variant="secondary" className="text-xs bg-gradient-to-r from-gray-100 to-gray-200 text-gray-700 border-0">
                     {useCase.reduction}
                   </Badge>
                 </div>
+                <CardTitle className="text-lg font-semibold text-gray-900 group-hover:text-gray-700 transition-colors">
+                  {useCase.title}
+                </CardTitle>
                 <CardDescription className="text-gray-600">
                   {useCase.description}
                 </CardDescription>
@@ -74,7 +94,7 @@ const UseCasesSection = () => {
               <CardContent>
                 <div className="flex flex-wrap gap-2">
                   {useCase.benefits.map((benefit, benefitIndex) => (
-                    <Badge key={benefitIndex} variant="outline" className="text-xs">
+                    <Badge key={benefitIndex} variant="outline" className="text-xs border-gray-200 text-gray-600 hover:bg-gray-50">
                       {benefit}
                     </Badge>
                   ))}
