@@ -70,7 +70,7 @@ const Pricing = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-[#bdc3c7] via-white to-[#2c3e50]">
       <Header />
       <main className="relative py-20 overflow-hidden">
         {/* Background pattern */}
@@ -78,7 +78,7 @@ const Pricing = () => {
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-6">
+            <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-[#2c3e50] to-[#34495e] bg-clip-text text-transparent mb-6">
               Simple, Transparent Pricing
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -92,24 +92,24 @@ const Pricing = () => {
                 key={index} 
                 className={`relative p-8 rounded-2xl border-2 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${
                   plan.popular 
-                    ? 'border-purple-500 bg-gradient-to-br from-blue-600 to-purple-600 text-white' 
-                    : 'border-white/20 bg-white/80 hover:border-purple-300'
+                    ? 'border-[#2c3e50] bg-gradient-to-br from-[#2c3e50] to-[#34495e] text-white' 
+                    : 'border-white/20 bg-white/80 hover:border-[#2c3e50]/30'
                 }`}
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-gradient-to-r from-orange-400 to-pink-500 text-white px-4 py-1 rounded-full text-sm font-medium shadow-lg">
+                    <span className="bg-gradient-to-r from-[#95a5a6] to-[#7f8c8d] text-white px-4 py-1 rounded-full text-sm font-medium shadow-lg">
                       Most Popular
                     </span>
                   </div>
                 )}
                 
                 <div className="text-center mb-8">
-                  <h3 className={`text-2xl font-semibold mb-2 ${plan.popular ? 'text-white' : 'bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'}`}>
+                  <h3 className={`text-2xl font-semibold mb-2 ${plan.popular ? 'text-white' : 'bg-gradient-to-r from-[#2c3e50] to-[#34495e] bg-clip-text text-transparent'}`}>
                     {plan.name}
                   </h3>
                   <div className="flex items-baseline justify-center">
-                    <span className={`text-4xl font-bold ${plan.popular ? 'text-white' : 'bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'}`}>
+                    <span className={`text-4xl font-bold ${plan.popular ? 'text-white' : 'bg-gradient-to-r from-[#2c3e50] to-[#34495e] bg-clip-text text-transparent'}`}>
                       {plan.price}
                     </span>
                     <span className={`ml-1 ${plan.popular ? 'text-gray-200' : 'text-gray-600'}`}>
@@ -132,8 +132,8 @@ const Pricing = () => {
                 <Button 
                   className={`w-full py-3 px-6 rounded-lg font-medium transition-all duration-300 hover:scale-105 ${
                     plan.popular 
-                      ? 'bg-white text-purple-600 hover:bg-gray-100 shadow-lg' 
-                      : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg'
+                      ? 'bg-white text-[#2c3e50] hover:bg-gray-100 shadow-lg' 
+                      : 'bg-gradient-to-r from-[#bdc3c7] to-[#2c3e50] text-white hover:from-[#95a5a6] hover:to-[#34495e] shadow-lg'
                   }`}
                   onClick={() => plan.name === 'Enterprise' ? handleContactSales() : handleGetStarted(plan.name)}
                 >

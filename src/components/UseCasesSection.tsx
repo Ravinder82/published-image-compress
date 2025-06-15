@@ -11,7 +11,7 @@ const UseCasesSection = () => {
       benefits: ["Faster loading", "Better SEO", "Improved UX"],
       reduction: "Up to 85% smaller",
       icon: Globe,
-      gradient: "from-blue-500 to-cyan-500"
+      gradient: "from-[#bdc3c7] to-[#2c3e50]"
     },
     {
       title: "Social Media Content",
@@ -19,7 +19,7 @@ const UseCasesSection = () => {
       benefits: ["Quick uploads", "Better quality", "More engagement"],
       reduction: "Perfect sizing",
       icon: Share2,
-      gradient: "from-pink-500 to-rose-500"
+      gradient: "from-[#95a5a6] to-[#34495e]"
     },
     {
       title: "Email Campaigns",
@@ -27,7 +27,7 @@ const UseCasesSection = () => {
       benefits: ["Better delivery", "Faster opens", "Lower costs"],
       reduction: "Smaller attachments",
       icon: Mail,
-      gradient: "from-green-500 to-emerald-500"
+      gradient: "from-[#bdc3c7] to-[#2c3e50]"
     },
     {
       title: "Storage Management",
@@ -35,7 +35,7 @@ const UseCasesSection = () => {
       benefits: ["Save space", "Reduce costs", "Organize better"],
       reduction: "Up to 90% savings",
       icon: HardDrive,
-      gradient: "from-purple-500 to-violet-500"
+      gradient: "from-[#95a5a6] to-[#34495e]"
     },
     {
       title: "E-commerce Products",
@@ -43,7 +43,7 @@ const UseCasesSection = () => {
       benefits: ["Fast browsing", "Clear details", "Higher sales"],
       reduction: "Optimal balance",
       icon: ShoppingCart,
-      gradient: "from-orange-500 to-amber-500"
+      gradient: "from-[#bdc3c7] to-[#2c3e50]"
     },
     {
       title: "Mobile Apps",
@@ -51,19 +51,19 @@ const UseCasesSection = () => {
       benefits: ["Smaller apps", "Faster performance", "Better UX"],
       reduction: "Significant reduction",
       icon: Smartphone,
-      gradient: "from-indigo-500 to-blue-500"
+      gradient: "from-[#95a5a6] to-[#34495e]"
     }
   ];
 
   return (
     <section className="relative py-20 overflow-hidden">
       {/* Background with pattern */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50 to-white"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-[#ecf0f1] to-white"></div>
       <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22100%22%20height%3D%22100%22%20viewBox%3D%220%200%20100%20100%22%3E%3Cg%20fill-opacity%3D%220.03%22%3E%3Cpolygon%20fill%3D%22%23000%22%20points%3D%2250%200%2060%2040%20100%2050%2060%2060%2050%20100%2040%2060%200%2050%2040%2040%22/%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent mb-4">
+          <h2 className="text-4xl font-bold bg-gradient-to-r from-[#2c3e50] to-[#34495e] bg-clip-text text-transparent mb-4">
             Perfect for Every Use Case
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">

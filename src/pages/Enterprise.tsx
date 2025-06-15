@@ -22,30 +22,30 @@ const Enterprise = () => {
       icon: Building,
       title: "Custom Infrastructure",
       description: "Dedicated servers and custom deployment options to meet your organization's needs.",
-      gradient: "from-blue-500 to-purple-500"
+      gradient: "from-[#bdc3c7] to-[#2c3e50]"
     },
     {
       icon: Shield,
       title: "Enhanced Security",
       description: "Advanced security features, compliance certifications, and data governance controls.",
-      gradient: "from-green-500 to-blue-500"
+      gradient: "from-[#95a5a6] to-[#34495e]"
     },
     {
       icon: Users,
       title: "Team Management",
       description: "User management, role-based access control, and team collaboration features.",
-      gradient: "from-purple-500 to-pink-500"
+      gradient: "from-[#bdc3c7] to-[#2c3e50]"
     },
     {
       icon: Headphones,
       title: "Dedicated Support",
       description: "Priority support with dedicated account management and SLA guarantees.",
-      gradient: "from-orange-500 to-red-500"
+      gradient: "from-[#95a5a6] to-[#34495e]"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-[#bdc3c7] via-white to-[#2c3e50]">
       <Header />
       <main className="relative py-20 overflow-hidden">
         {/* Background pattern */}
@@ -53,7 +53,7 @@ const Enterprise = () => {
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-gray-900 via-indigo-900 to-purple-900 bg-clip-text text-transparent mb-6">
+            <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-[#2c3e50] to-[#34495e] bg-clip-text text-transparent mb-6">
               Enterprise Solutions
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -74,7 +74,7 @@ const Enterprise = () => {
           </div>
           
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-12 text-center shadow-lg border border-white/20">
-            <h2 className="text-3xl font-semibold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-6">
+            <h2 className="text-3xl font-semibold bg-gradient-to-r from-[#2c3e50] to-[#34495e] bg-clip-text text-transparent mb-6">
               Ready to Get Started?
             </h2>
             <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
@@ -82,14 +82,14 @@ const Enterprise = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg text-lg font-medium"
+                className="bg-gradient-to-r from-[#bdc3c7] to-[#2c3e50] hover:from-[#95a5a6] hover:to-[#34495e] text-white px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg text-lg font-medium"
                 onClick={handleContactSales}
               >
                 Contact Sales
               </Button>
               <Button 
                 variant="outline"
-                className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-300 hover:scale-105 text-lg font-medium bg-white/60 backdrop-blur-sm"
+                className="border-2 border-[#2c3e50] text-[#2c3e50] px-8 py-4 rounded-lg hover:bg-[#2c3e50] hover:text-white transition-all duration-300 hover:scale-105 text-lg font-medium bg-white/60 backdrop-blur-sm"
                 onClick={handleScheduleDemo}
               >
                 Schedule Demo

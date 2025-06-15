@@ -15,7 +15,7 @@ const SearchBar = ({ searchQuery, onSearchChange }: SearchBarProps) => {
         placeholder="Search for help articles..."
         value={searchQuery}
         onChange={(e) => onSearchChange(e.target.value)}
-        className="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none text-lg bg-white/80 backdrop-blur-sm"
+        className="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2c3e50] focus:border-transparent outline-none text-lg bg-white/80 backdrop-blur-sm"
       />
     </div>
   );

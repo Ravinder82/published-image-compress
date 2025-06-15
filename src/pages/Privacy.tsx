@@ -1,10 +1,9 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const Privacy = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-[#bdc3c7] via-white to-[#2c3e50]">
       <Header />
       <main className="relative py-20 overflow-hidden">
         {/* Background pattern */}
@@ -12,7 +11,7 @@ const Privacy = () => {
         
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 bg-clip-text text-transparent mb-6">
+            <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-[#2c3e50] to-[#34495e] bg-clip-text text-transparent mb-6">
               Privacy Policy
             </h1>
             <p className="text-lg text-gray-600">
@@ -24,7 +23,7 @@ const Privacy = () => {
             <div className="prose prose-lg max-w-none">
               <div className="space-y-8">
                 <section>
-                  <h2 className="text-2xl font-semibold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-4">Information We Collect</h2>
+                  <h2 className="text-2xl font-semibold bg-gradient-to-r from-[#2c3e50] to-[#34495e] bg-clip-text text-transparent mb-4">Information We Collect</h2>
                   <p className="text-gray-600 mb-4 leading-relaxed">
                     ImageCompress is designed with privacy in mind. We collect minimal information to provide our service:
                   </p>
@@ -36,7 +35,7 @@ const Privacy = () => {
                 </section>
                 
                 <section>
-                  <h2 className="text-2xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">Image Processing</h2>
+                  <h2 className="text-2xl font-semibold bg-gradient-to-r from-[#2c3e50] to-[#34495e] bg-clip-text text-transparent mb-4">Image Processing</h2>
                   <p className="text-gray-600 mb-4 leading-relaxed">
                     Your privacy is our priority. Here's how we handle your images:
                   </p>
@@ -49,7 +48,7 @@ const Privacy = () => {
                 </section>
                 
                 <section>
-                  <h2 className="text-2xl font-semibold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">Data Security</h2>
+                  <h2 className="text-2xl font-semibold bg-gradient-to-r from-[#2c3e50] to-[#34495e] bg-clip-text text-transparent mb-4">Data Security</h2>
                   <p className="text-gray-600 leading-relaxed">
                     We implement appropriate security measures to protect your information. 
                     All data transmission is encrypted using SSL/TLS protocols.
@@ -57,7 +56,7 @@ const Privacy = () => {
                 </section>
                 
                 <section>
-                  <h2 className="text-2xl font-semibold bg-gradient-to-r from-pink-600 to-red-600 bg-clip-text text-transparent mb-4">Third-Party Services</h2>
+                  <h2 className="text-2xl font-semibold bg-gradient-to-r from-[#2c3e50] to-[#34495e] bg-clip-text text-transparent mb-4">Third-Party Services</h2>
                   <p className="text-gray-600 leading-relaxed">
                     We use trusted third-party services for analytics and infrastructure. 
                     These services are bound by their own privacy policies and security measures.
@@ -65,10 +64,10 @@ const Privacy = () => {
                 </section>
                 
                 <section>
-                  <h2 className="text-2xl font-semibold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-4">Contact Us</h2>
+                  <h2 className="text-2xl font-semibold bg-gradient-to-r from-[#2c3e50] to-[#34495e] bg-clip-text text-transparent mb-4">Contact Us</h2>
                   <p className="text-gray-600 leading-relaxed">
                     If you have any questions about this Privacy Policy, please contact us at{" "}
-                    <a href="mailto:privacy@imagecompress.com" className="text-blue-600 hover:text-purple-600 underline transition-colors">
+                    <a href="mailto:privacy@imagecompress.com" className="text-[#2c3e50] hover:text-[#34495e] underline transition-colors">
                       privacy@imagecompress.com
                     </a>
                   </p>

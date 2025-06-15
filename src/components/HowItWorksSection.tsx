@@ -9,35 +9,35 @@ const HowItWorksSection = () => {
       title: "Upload Your Images",
       description: "Drag and drop or click to select JPG, PNG, or WebP images. Multiple files supported.",
       details: "Support for batch uploads up to 50 images at once",
-      gradient: "from-blue-500 to-cyan-500"
+      gradient: "from-[#bdc3c7] to-[#2c3e50]"
     },
     {
       icon: Settings,
       title: "Choose Settings",
       description: "Select compression quality, output format, and resize options. Or use our smart presets.",
       details: "Web, social media, and storage optimization presets available",
-      gradient: "from-purple-500 to-pink-500"
+      gradient: "from-[#95a5a6] to-[#34495e]"
     },
     {
       icon: CheckCircle,
       title: "Instant Processing",
       description: "Our advanced algorithm compresses your images locally in your browser within seconds.",
       details: "No uploads to servers - everything happens on your device",
-      gradient: "from-green-500 to-emerald-500"
+      gradient: "from-[#bdc3c7] to-[#2c3e50]"
     },
     {
       icon: Download,
       title: "Download Results",
       description: "Get your optimized images with detailed compression statistics and quality comparison.",
       details: "Original vs compressed preview with file size reduction stats",
-      gradient: "from-orange-500 to-red-500"
+      gradient: "from-[#95a5a6] to-[#34495e]"
     }
   ];
 
   return (
     <section className="relative py-20 overflow-hidden">
       {/* Dark background with geometric pattern */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-[#2c3e50] via-[#34495e] to-[#2c3e50]"></div>
       <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%22100%22%20height%3D%22100%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M11%2018c3.866%200%207-3.134%207-7s-3.134-7-7-7-7%203.134-7%207%203.134%207%207%207zm48%2025c3.866%200%207-3.134%207-7s-3.134-7-7-7-7%203.134-7%207%203.134%207%207%207zm-43-7c1.657%200%203-1.343%203-3s-1.343-3-3-3-3%201.343-3%203%201.343%203%203%203zm63%2031c1.657%200%203-1.343%203-3s-1.343-3-3-3-3%201.343-3%203%201.343%203%203%203zm25%208c2.76%200%205-2.24%205-5s-2.24-5-5-5-5%202.24-5%205%202.24%205%205%205z%22%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.05%22%20fill-rule%3D%22evenodd%22/%3E%3C/svg%3E')] opacity-30"></div>
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

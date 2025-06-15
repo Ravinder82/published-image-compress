@@ -1,4 +1,3 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Mail, MessageCircle, Phone, MapPin } from "lucide-react";
@@ -29,7 +28,7 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-[#bdc3c7] via-white to-[#2c3e50]">
       <Header />
       <main className="relative py-20 overflow-hidden">
         {/* Background pattern */}
@@ -37,7 +36,7 @@ const Contact = () => {
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-6">
+            <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-[#2c3e50] to-[#34495e] bg-clip-text text-transparent mb-6">
               Contact Us
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -47,16 +46,16 @@ const Contact = () => {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-2xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-8">Get in Touch</h2>
+              <h2 className="text-2xl font-semibold bg-gradient-to-r from-[#2c3e50] to-[#34495e] bg-clip-text text-transparent mb-8">Get in Touch</h2>
               
               <div className="space-y-6 mb-8">
                 {contactMethods.map((method, index) => (
                   <div key={index} className="flex items-start space-x-4 p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                    <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center shadow-lg">
+                    <div className="w-12 h-12 bg-gradient-to-r from-[#bdc3c7] to-[#2c3e50] rounded-xl flex items-center justify-center shadow-lg">
                       <method.icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-1">{method.title}</h3>
+                      <h3 className="font-semibold bg-gradient-to-r from-[#2c3e50] to-[#34495e] bg-clip-text text-transparent mb-1">{method.title}</h3>
                       <p className="text-gray-600 text-sm mb-2">{method.description}</p>
                       <p className="font-medium text-gray-900">{method.contact}</p>
                       <p className="text-gray-500 text-sm">{method.availability}</p>
@@ -66,11 +65,11 @@ const Contact = () => {
               </div>
               
               <div className="flex items-start space-x-4 p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center shadow-lg">
+                <div className="w-12 h-12 bg-gradient-to-r from-[#95a5a6] to-[#7f8c8d] rounded-xl flex items-center justify-center shadow-lg">
                   <MapPin className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-semibold bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent mb-1">Office</h3>
+                  <h3 className="font-semibold bg-gradient-to-r from-[#95a5a6] to-[#7f8c8d] bg-clip-text text-transparent mb-1">Office</h3>
                   <p className="text-gray-600">
                     123 Tech Street<br />
                     San Francisco, CA 94105<br />
@@ -81,7 +80,7 @@ const Contact = () => {
             </div>
             
             <div className="bg-white/80 backdrop-blur-sm border border-white/20 rounded-2xl p-8 shadow-lg">
-              <h2 className="text-2xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-6">Send us a message</h2>
+              <h2 className="text-2xl font-semibold bg-gradient-to-r from-[#2c3e50] to-[#34495e] bg-clip-text text-transparent mb-6">Send us a message</h2>
               
               <form className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -91,7 +90,7 @@ const Contact = () => {
                     </label>
                     <input
                       type="text"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none bg-white/70 backdrop-blur-sm transition-all duration-300"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2c3e50] focus:border-transparent outline-none bg-white/70 backdrop-blur-sm transition-all duration-300"
                     />
                   </div>
                   <div>
@@ -100,7 +99,7 @@ const Contact = () => {
                     </label>
                     <input
                       type="text"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none bg-white/70 backdrop-blur-sm transition-all duration-300"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2c3e50] focus:border-transparent outline-none bg-white/70 backdrop-blur-sm transition-all duration-300"
                     />
                   </div>
                 </div>
@@ -111,7 +110,7 @@ const Contact = () => {
                   </label>
                   <input
                     type="email"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none bg-white/70 backdrop-blur-sm transition-all duration-300"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2c3e50] focus:border-transparent outline-none bg-white/70 backdrop-blur-sm transition-all duration-300"
                   />
                 </div>
                 
@@ -121,7 +120,7 @@ const Contact = () => {
                   </label>
                   <input
                     type="text"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none bg-white/70 backdrop-blur-sm transition-all duration-300"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2c3e50] focus:border-transparent outline-none bg-white/70 backdrop-blur-sm transition-all duration-300"
                   />
                 </div>
                 
@@ -131,13 +130,13 @@ const Contact = () => {
                   </label>
                   <textarea
                     rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none bg-white/70 backdrop-blur-sm transition-all duration-300 resize-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2c3e50] focus:border-transparent outline-none bg-white/70 backdrop-blur-sm transition-all duration-300 resize-none"
                   ></textarea>
                 </div>
                 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-6 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 font-medium shadow-lg hover:shadow-xl hover:scale-105"
+                  className="w-full bg-gradient-to-r from-[#bdc3c7] to-[#2c3e50] text-white py-3 px-6 rounded-lg hover:from-[#95a5a6] hover:to-[#34495e] transition-all duration-300 font-medium shadow-lg hover:shadow-xl hover:scale-105"
                 >
                   Send Message
                 </button>

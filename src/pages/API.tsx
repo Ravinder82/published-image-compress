@@ -5,7 +5,7 @@ import { Code, Key, Zap, Globe } from "lucide-react";
 
 const API = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-[#bdc3c7] via-white to-[#2c3e50]">
       <Header />
       <main className="relative py-20 overflow-hidden">
         {/* Background pattern */}
@@ -13,7 +13,7 @@ const API = () => {
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-gray-900 via-purple-900 to-blue-900 bg-clip-text text-transparent mb-6">
+            <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-[#2c3e50] to-[#34495e] bg-clip-text text-transparent mb-6">
               API Documentation
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -23,7 +23,7 @@ const API = () => {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20">
-              <h2 className="text-2xl font-semibold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-6">Getting Started</h2>
+              <h2 className="text-2xl font-semibold bg-gradient-to-r from-[#2c3e50] to-[#34495e] bg-clip-text text-transparent mb-6">Getting Started</h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
                 Our API provides programmatic access to our image compression technology. 
                 Perfect for developers who want to integrate compression into their applications.
@@ -31,7 +31,7 @@ const API = () => {
               
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center">
+                  <div className="w-10 h-10 bg-gradient-to-r from-[#bdc3c7] to-[#2c3e50] rounded-lg flex items-center justify-center">
                     <Key className="w-5 h-5 text-white" />
                   </div>
                   <div>
@@ -41,7 +41,7 @@ const API = () => {
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-blue-500 rounded-lg flex items-center justify-center">
+                  <div className="w-10 h-10 bg-gradient-to-r from-[#95a5a6] to-[#34495e] rounded-lg flex items-center justify-center">
                     <Zap className="w-5 h-5 text-white" />
                   </div>
                   <div>
@@ -51,7 +51,7 @@ const API = () => {
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                  <div className="w-10 h-10 bg-gradient-to-r from-[#bdc3c7] to-[#2c3e50] rounded-lg flex items-center justify-center">
                     <Globe className="w-5 h-5 text-white" />
                   </div>
                   <div>
@@ -64,7 +64,7 @@ const API = () => {
             
             <div className="bg-gray-900/95 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/10">
               <div className="flex items-center space-x-3 mb-6">
-                <div className="w-8 h-8 bg-gradient-to-r from-green-400 to-blue-500 rounded-lg flex items-center justify-center">
+                <div className="w-8 h-8 bg-gradient-to-r from-[#95a5a6] to-[#7f8c8d] rounded-lg flex items-center justify-center">
                   <Code className="w-4 h-4 text-white" />
                 </div>
                 <h3 className="font-semibold text-white">Sample Request</h3>
@@ -81,13 +81,13 @@ const API = () => {
           
           <div className="text-center">
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-12 shadow-lg border border-white/20">
-              <h2 className="text-3xl font-semibold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-6">
+              <h2 className="text-3xl font-semibold bg-gradient-to-r from-[#2c3e50] to-[#34495e] bg-clip-text text-transparent mb-6">
                 API Coming Soon
               </h2>
               <p className="text-gray-600 mb-8 text-lg">
                 We're currently developing our API. Join the waitlist to be notified when it's available.
               </p>
-              <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg text-lg font-medium">
+              <button className="bg-gradient-to-r from-[#bdc3c7] to-[#2c3e50] hover:from-[#95a5a6] hover:to-[#34495e] text-white px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg text-lg font-medium">
                 Join Waitlist
               </button>
             </div>

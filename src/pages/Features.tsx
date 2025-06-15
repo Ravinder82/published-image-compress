@@ -9,42 +9,42 @@ const Features = () => {
       icon: Zap,
       title: "Lightning Fast Processing",
       description: "Our advanced compression algorithms process images in seconds, not minutes.",
-      gradient: "from-yellow-400 to-orange-500"
+      gradient: "from-[#bdc3c7] to-[#2c3e50]"
     },
     {
       icon: Shield,
       title: "100% Secure & Private",
       description: "All processing happens locally in your browser. Your images never leave your device.",
-      gradient: "from-green-400 to-blue-500"
+      gradient: "from-[#95a5a6] to-[#34495e]"
     },
     {
       icon: Gauge,
       title: "Quality Preservation",
       description: "Smart compression maintains visual quality while significantly reducing file sizes.",
-      gradient: "from-purple-400 to-pink-500"
+      gradient: "from-[#bdc3c7] to-[#2c3e50]"
     },
     {
       icon: Download,
       title: "Instant Downloads",
       description: "Download your compressed images immediately with a single click.",
-      gradient: "from-blue-400 to-cyan-500"
+      gradient: "from-[#95a5a6] to-[#34495e]"
     },
     {
       icon: Globe,
       title: "No Registration Required",
       description: "Start compressing images right away without creating an account.",
-      gradient: "from-indigo-400 to-purple-500"
+      gradient: "from-[#bdc3c7] to-[#2c3e50]"
     },
     {
       icon: Smartphone,
       title: "Works Everywhere",
       description: "Compatible with all modern browsers on desktop, tablet, and mobile devices.",
-      gradient: "from-pink-400 to-red-500"
+      gradient: "from-[#95a5a6] to-[#34495e]"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-[#bdc3c7] via-white to-[#2c3e50]">
       <Header />
       <main className="relative py-20 overflow-hidden">
         {/* Background pattern */}
@@ -52,7 +52,7 @@ const Features = () => {
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 bg-clip-text text-transparent mb-6">
+            <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-[#2c3e50] to-[#34495e] bg-clip-text text-transparent mb-6">
               Powerful Features
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">

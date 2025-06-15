@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -60,16 +61,16 @@ const Auth = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-[#bdc3c7] via-[#ecf0f1] to-[#2c3e50]">
       <Header />
       <div className="flex flex-col justify-center py-12 sm:px-6 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <div className="flex justify-center">
-            <div className="w-12 h-12 bg-black rounded-lg flex items-center justify-center">
+            <div className="w-12 h-12 bg-gradient-to-r from-[#bdc3c7] to-[#2c3e50] rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">IC</span>
             </div>
           </div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+          <h2 className="mt-6 text-center text-3xl font-extrabold bg-gradient-to-r from-[#2c3e50] to-[#34495e] bg-clip-text text-transparent">
             {isLogin ? 'Sign in to your account' : 'Create your account'}
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
@@ -77,7 +78,7 @@ const Auth = () => {
             <button
               type="button"
               onClick={() => setIsLogin(!isLogin)}
-              className="font-medium text-black hover:text-gray-800"
+              className="font-medium text-[#2c3e50] hover:text-[#34495e]"
             >
               {isLogin ? 'Sign up' : 'Sign in'}
             </button>
@@ -85,7 +86,7 @@ const Auth = () => {
         </div>
 
         <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-          <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+          <div className="bg-white/80 backdrop-blur-sm py-8 px-4 shadow-lg border border-white/20 sm:rounded-lg sm:px-10">
             <form className="space-y-6" onSubmit={handleSubmit}>
               {!isLogin && (
                 <div>
@@ -133,7 +134,7 @@ const Auth = () => {
               <div>
                 <Button
                   type="submit"
-                  className="w-full bg-black hover:bg-gray-800"
+                  className="w-full bg-gradient-to-r from-[#bdc3c7] to-[#2c3e50] hover:from-[#95a5a6] hover:to-[#34495e]"
                   disabled={isLoading}
                 >
                   {isLoading ? 'Loading...' : (isLogin ? 'Sign in' : 'Sign up')}
