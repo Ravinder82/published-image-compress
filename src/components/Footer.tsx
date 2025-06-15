@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-r from-[#bdc3c7] to-[#95a5a6] rounded-xl flex items-center justify-center shadow-lg">
+              <div className="w-10 h-10 bg-gradient-to-r from-[#bdc3c7] to-[#2c3e50] rounded-xl flex items-center justify-center shadow-lg">
                 <span className="text-white font-bold text-lg">IC</span>
               </div>
               <div className="flex flex-col">
@@ -27,7 +27,7 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="font-semibold mb-6 text-lg bg-gradient-to-r from-[#bdc3c7] to-[#95a5a6] bg-clip-text text-transparent">Product</h3>
+            <h3 className="font-semibold mb-6 text-lg bg-gradient-to-r from-[#bdc3c7] to-[#2c3e50] bg-clip-text text-transparent">Product</h3>
             <ul className="space-y-3 text-gray-300">
               <li><Link to="/features" className="hover:text-white transition-all duration-300 hover:translate-x-1 inline-block">Features</Link></li>
               <li><Link to="/api" className="hover:text-white transition-all duration-300 hover:translate-x-1 inline-block">API</Link></li>
@@ -37,13 +37,13 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="font-semibold mb-6 text-lg bg-gradient-to-r from-[#bdc3c7] to-[#95a5a6] bg-clip-text text-transparent">Support</h3>
+            <h3 className="font-semibold mb-6 text-lg bg-gradient-to-r from-[#bdc3c7] to-[#2c3e50] bg-clip-text text-transparent">Support</h3>
             <ul className="space-y-3 text-gray-300">
               <li><Link to="/help" className="hover:text-white transition-all duration-300 hover:translate-x-1 inline-block">Help Center</Link></li>
               <li><Link to="/contact" className="hover:text-white transition-all duration-300 hover:translate-x-1 inline-block">Contact Us</Link></li>
               <li><Link to="/privacy" className="hover:text-white transition-all duration-300 hover:translate-x-1 inline-block">Privacy Policy</Link></li>
               <li><Link to="/terms" className="hover:text-white transition-all duration-300 hover:translate-x-1 inline-block">Terms of Service</Link></li>
-            </div>
+            </ul>
           </div>
         </div>
         
