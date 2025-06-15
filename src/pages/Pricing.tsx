@@ -2,8 +2,30 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Check } from "lucide-react";
+import { useAuth } from "@/contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const Pricing = () => {
+  const { user } = useAuth();
+  const navigate = useNavigate();
+
+  const handleGetStarted = (planName: string) => {
+    if (!user) {
+      navigate('/auth');
+      return;
+    }
+    
+    // For authenticated users, you can add specific plan logic here
+    console.log(`User ${user.email} selected ${planName} plan`);
+    // Navigate to main app or show success message
+    navigate('/');
+  };
+
+  const handleContactSales = () => {
+    navigate('/contact');
+  };
+
   const plans = [
     {
       name: "Free",
@@ -104,15 +126,17 @@ const Pricing = () => {
                   ))}
                 </ul>
                 
-                <button 
+                <Button 
                   className={`w-full py-3 px-6 rounded-lg font-medium transition-colors ${
                     plan.popular 
                       ? 'bg-white text-black hover:bg-gray-100' 
                       : 'bg-black text-white hover:bg-gray-800'
                   }`}
+                  onClick={() => plan.name === 'Enterprise' ? handleContactSales() : handleGetStarted(plan.name)}
                 >
-                  {plan.name === 'Enterprise' ? 'Contact Sales' : 'Get Started'}
-                </button>
+                  {plan.name === 'Enterprise' ? 'Contact Sales' : 
+                   user ? `Get ${plan.name}` : 'Get Started'}
+                </Button>
               </div>
             ))}
           </div>
