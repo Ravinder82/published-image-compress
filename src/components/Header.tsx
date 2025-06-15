@@ -16,24 +16,28 @@ const Header = () => {
     }
   };
 
-  const handleLogoClick = () => {
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
     console.log('Logo clicked, navigating to homepage');
-    navigate('/');
+    console.log('Current location:', window.location.pathname);
+    navigate('/', { replace: true });
   };
 
   return (
     <header className="w-full border-b border-gray-200 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div 
-            className="flex items-center space-x-2 cursor-pointer hover:opacity-80 transition-opacity" 
+          <button 
+            className="flex items-center space-x-2 cursor-pointer hover:opacity-80 transition-opacity bg-transparent border-none p-0" 
             onClick={handleLogoClick}
+            type="button"
           >
             <div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-sm">IC</span>
             </div>
             <span className="text-xl font-semibold text-gray-900">ImageCompress</span>
-          </div>
+          </button>
           
           <div className="flex items-center space-x-4">
             {user ? (
