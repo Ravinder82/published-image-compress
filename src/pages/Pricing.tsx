@@ -70,12 +70,15 @@ const Pricing = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
       <Header />
-      <main className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <main className="relative py-20 overflow-hidden">
+        {/* Background pattern */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%239C92AC%22 fill-opacity=%220.03%22%3E%3Ccircle cx=%2230%22 cy=%2230%22 r=%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 bg-clip-text text-transparent mb-6">
               Simple, Transparent Pricing
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -87,15 +90,15 @@ const Pricing = () => {
             {plans.map((plan, index) => (
               <div 
                 key={index} 
-                className={`relative p-8 rounded-2xl border-2 ${
+                className={`relative p-8 rounded-2xl border-2 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${
                   plan.popular 
-                    ? 'border-black bg-black text-white' 
-                    : 'border-gray-200 bg-white hover:border-gray-300'
-                } transition-colors`}
+                    ? 'border-blue-500 bg-gradient-to-br from-blue-600 to-purple-600 text-white' 
+                    : 'border-white/20 bg-white/80 hover:border-gray-300'
+                }`}
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-white text-black px-4 py-1 rounded-full text-sm font-medium">
+                    <span className="bg-gradient-to-r from-orange-400 to-pink-500 text-white px-4 py-1 rounded-full text-sm font-medium shadow-lg">
                       Most Popular
                     </span>
                   </div>
@@ -109,7 +112,7 @@ const Pricing = () => {
                     <span className={`text-4xl font-bold ${plan.popular ? 'text-white' : 'text-gray-900'}`}>
                       {plan.price}
                     </span>
-                    <span className={`ml-1 ${plan.popular ? 'text-gray-300' : 'text-gray-600'}`}>
+                    <span className={`ml-1 ${plan.popular ? 'text-gray-200' : 'text-gray-600'}`}>
                       /{plan.period}
                     </span>
                   </div>
@@ -119,7 +122,7 @@ const Pricing = () => {
                   {plan.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start space-x-3">
                       <Check className={`w-5 h-5 mt-0.5 ${plan.popular ? 'text-white' : 'text-green-500'}`} />
-                      <span className={plan.popular ? 'text-gray-300' : 'text-gray-600'}>
+                      <span className={plan.popular ? 'text-gray-100' : 'text-gray-600'}>
                         {feature}
                       </span>
                     </li>
@@ -127,10 +130,10 @@ const Pricing = () => {
                 </ul>
                 
                 <Button 
-                  className={`w-full py-3 px-6 rounded-lg font-medium transition-colors ${
+                  className={`w-full py-3 px-6 rounded-lg font-medium transition-all duration-300 hover:scale-105 ${
                     plan.popular 
-                      ? 'bg-white text-black hover:bg-gray-100' 
-                      : 'bg-black text-white hover:bg-gray-800'
+                      ? 'bg-white text-gray-900 hover:bg-gray-100 shadow-lg' 
+                      : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg'
                   }`}
                   onClick={() => plan.name === 'Enterprise' ? handleContactSales() : handleGetStarted(plan.name)}
                 >
