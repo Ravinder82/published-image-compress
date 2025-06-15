@@ -31,15 +31,13 @@ const Footer = () => {
             <ul className="space-y-3 text-gray-300">
               <li><Link to="/features" className="hover:text-white transition-all duration-300 hover:translate-x-1 inline-block">Features</Link></li>
               <li><Link to="/api" className="hover:text-white transition-all duration-300 hover:translate-x-1 inline-block">API</Link></li>
-              <li><Link to="/pricing" className="hover:text-white transition-all duration-300 hover:translate-x-1 inline-block">Pricing</Link></li>
-              <li><Link to="/enterprise" className="hover:text-white transition-all duration-300 hover:translate-x-1 inline-block">Enterprise</Link></li>
+              <li><Link to="/enterprise" className="hover:text-white transition-all duration-300 hover:translate-x-1 inline-block">Purchase License</Link></li>
             </ul>
           </div>
           
           <div>
             <h3 className="font-semibold mb-6 text-lg bg-gradient-to-r from-[#bdc3c7] to-[#2c3e50] bg-clip-text text-transparent">Support</h3>
             <ul className="space-y-3 text-gray-300">
-              <li><Link to="/help" className="hover:text-white transition-all duration-300 hover:translate-x-1 inline-block">Help Center</Link></li>
               <li><Link to="/contact" className="hover:text-white transition-all duration-300 hover:translate-x-1 inline-block">Contact Us</Link></li>
               <li><Link to="/privacy" className="hover:text-white transition-all duration-300 hover:translate-x-1 inline-block">Privacy Policy</Link></li>
               <li><Link to="/terms" className="hover:text-white transition-all duration-300 hover:translate-x-1 inline-block">Terms of Service</Link></li>
