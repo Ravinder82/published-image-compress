@@ -1,7 +1,10 @@
 
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import UseCasesSection from "@/components/UseCasesSection";
+import HowItWorksSection from "@/components/HowItWorksSection";
 import ImageUpload from "@/components/ImageUpload";
+import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import { useAuth } from "@/contexts/AuthContext";
@@ -14,6 +17,8 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
+        <UseCasesSection />
+        <HowItWorksSection />
         {user ? (
           <ImageUpload />
         ) : (
@@ -21,6 +26,7 @@ const Index = () => {
             <ImageUpload />
           </ProtectedRoute>
         )}
+        <FAQSection />
       </main>
       <Footer />
     </div>
