@@ -1,5 +1,5 @@
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Upload, Image as ImageIcon, X, Download } from "lucide-react";
@@ -10,11 +10,13 @@ interface UploadedImage {
   originalSize: number;
   compressedSize?: number;
   compressionRatio?: number;
+  compressedBlob?: Blob;
 }
 
 const ImageUpload = () => {
   const [images, setImages] = useState<UploadedImage[]>([]);
   const [dragActive, setDragActive] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleDrag = useCallback((e: React.DragEvent) => {
     e.preventDefault();
@@ -40,12 +42,52 @@ const ImageUpload = () => {
     handleFiles(files);
   };
 
+  const handleButtonClick = () => {
+    fileInputRef.current?.click();
+  };
+
+  const compressImage = (file: File): Promise<Blob> => {
+    return new Promise((resolve) => {
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      const img = new Image();
+      
+      img.onload = () => {
+        // Calculate new dimensions (compress by reducing quality and potentially size)
+        const maxWidth = 1920;
+        const maxHeight = 1080;
+        let { width, height } = img;
+        
+        if (width > maxWidth || height > maxHeight) {
+          const ratio = Math.min(maxWidth / width, maxHeight / height);
+          width *= ratio;
+          height *= ratio;
+        }
+        
+        canvas.width = width;
+        canvas.height = height;
+        
+        ctx?.drawImage(img, 0, 0, width, height);
+        
+        canvas.toBlob(
+          (blob) => {
+            resolve(blob!);
+          },
+          file.type,
+          0.7 // 70% quality
+        );
+      };
+      
+      img.src = URL.createObjectURL(file);
+    });
+  };
+
   const handleFiles = (files: File[]) => {
     const imageFiles = files.filter(file => 
       file.type === 'image/jpeg' || file.type === 'image/png'
     );
 
-    imageFiles.forEach(file => {
+    imageFiles.forEach(async (file) => {
       const reader = new FileReader();
       reader.onload = (e) => {
         const newImage: UploadedImage = {
@@ -56,19 +98,23 @@ const ImageUpload = () => {
         
         setImages(prev => [...prev, newImage]);
         
-        // Simulate compression (in real app, this would be actual image compression)
-        setTimeout(() => {
-          const compressionRatio = 0.3 + Math.random() * 0.4; // 30-70% size reduction
-          const compressedSize = Math.floor(file.size * compressionRatio);
+        // Perform actual compression
+        compressImage(file).then((compressedBlob) => {
+          const compressionRatio = ((file.size - compressedBlob.size) / file.size) * 100;
           
           setImages(prev => 
             prev.map(img => 
               img.file === file 
-                ? { ...img, compressedSize, compressionRatio: (1 - compressionRatio) * 100 }
+                ? { 
+                    ...img, 
+                    compressedSize: compressedBlob.size, 
+                    compressionRatio,
+                    compressedBlob 
+                  }
                 : img
             )
           );
-        }, 1500);
+        });
       };
       reader.readAsDataURL(file);
     });
@@ -76,6 +122,19 @@ const ImageUpload = () => {
 
   const removeImage = (index: number) => {
     setImages(prev => prev.filter((_, i) => i !== index));
+  };
+
+  const downloadCompressed = (image: UploadedImage) => {
+    if (!image.compressedBlob) return;
+    
+    const url = URL.createObjectURL(image.compressedBlob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `compressed_${image.file.name}`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
   };
 
   const formatFileSize = (bytes: number) => {
@@ -123,18 +182,19 @@ const ImageUpload = () => {
             </p>
             
             <input
+              ref={fileInputRef}
               type="file"
               multiple
               accept="image/jpeg,image/png"
               onChange={handleFileInput}
               className="hidden"
-              id="file-upload"
             />
-            <label htmlFor="file-upload">
-              <Button className="bg-black hover:bg-gray-800 text-white cursor-pointer">
-                Select Files
-              </Button>
-            </label>
+            <Button 
+              onClick={handleButtonClick}
+              className="bg-black hover:bg-gray-800 text-white cursor-pointer"
+            >
+              Select Files
+            </Button>
           </div>
         </Card>
 
@@ -195,9 +255,12 @@ const ImageUpload = () => {
                       </div>
                     </div>
                     
-                    {image.compressedSize && (
+                    {image.compressedBlob && (
                       <div className="flex-shrink-0">
-                        <Button className="bg-black hover:bg-gray-800 text-white">
+                        <Button 
+                          onClick={() => downloadCompressed(image)}
+                          className="bg-black hover:bg-gray-800 text-white"
+                        >
                           <Download className="w-4 h-4 mr-2" />
                           Download
                         </Button>
